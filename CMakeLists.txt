@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(bbb_roadtest)
 include_directories(./include)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -17,11 +17,12 @@ find_package(catkin REQUIRED COMPONENTS
 #  pcl_conversions
 #  pcl_ros
 #  roscpp
-#  sensor_msgs
-#  std_msgs
+  sensor_msgs
+  std_msgs
 #  tf
 #  tf_conversions
-#  image_transport  
+  image_transport
+  camera_info_manager
 )
 find_package(OpenCV REQUIRED)
 

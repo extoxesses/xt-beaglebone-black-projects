@@ -33,16 +33,20 @@
 #include <string>
 
 #include <ros/ros.h>
+#include <cv_bridge/cv_bridge.h>
+#include <sensor_msgs/image_encodings.h>
+#include <image_transport/image_transport.h>
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
+//#include <opencv2/imgproc/imgproc.hpp>
 
 namespace bbb_roadtest{
 class USBCamReader{
 
 public:
-  USBCamReader(ros::NodeHandle& nh, int cam_idx);
+  USBCamReader(ros::NodeHandle& nh, int cam_idx, std::string& topic);
   ~USBCamReader();
 
   void start(bool show = false);
@@ -50,8 +54,10 @@ public:
 private:
   ros::NodeHandle nh_;
   int cam_idx_;
+  ros::Publisher frame_pub_;
 
   void displayFrame(cv::Mat& frame);
+  void publish(cv::Mat& frame);
 
 };//class USBCamReader
 }//namespace bbb_roadtest

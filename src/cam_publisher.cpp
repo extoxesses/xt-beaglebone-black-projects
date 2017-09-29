@@ -9,10 +9,10 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "cam_publisher");
   ros::NodeHandle nh;
 
-  int idx = 1   ;
-
-  bbb_roadtest::USBCamReader cr = bbb_roadtest::USBCamReader(nh, idx);
-  cr.start(true);
+  int idx = 1;
+  string topic = "/bbb_roadtest/cam_publisher";
+  bbb_roadtest::USBCamReader cr = bbb_roadtest::USBCamReader(nh, idx, topic);
+  cr.start(false);
 
   ros::spin();
   return 0;
