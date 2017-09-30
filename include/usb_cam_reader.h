@@ -40,24 +40,45 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
-//#include <opencv2/imgproc/imgproc.hpp>
+
 
 namespace bbb_roadtest{
 class USBCamReader{
 
 public:
+  /**
+   * @brief USBCamReader - Default constructor
+   * @param nh      - ROS node handle
+   * @param cam_idx - Camera index
+   * @param topic   - Publishing topic
+   */
   USBCamReader(ros::NodeHandle& nh, int cam_idx, std::string& topic);
+  /**
+   * Default descrtuctor
+   */
   ~USBCamReader();
 
+  /**
+   * @brief start - This method allow to the node to start to publish the camera stream
+   * @param show - Flag, default equal to false. If true, a debug gui is shown
+   */
   void start(bool show = false);
+
+  // Getter methods
+  int getCamIndex();
+  void getTopic(std::string& topic);
 
 private:
   ros::NodeHandle nh_;
   int cam_idx_;
-  ros::Publisher frame_pub_;
+  std::string topic_;
+  image_transport::Publisher frame_pub_;
 
-  void displayFrame(cv::Mat& frame);
-  void publish(cv::Mat& frame);
+  /**
+   * @brief displayFrame - This method allows to show a gui to see frames readed from the camera
+   * @param frame - Readed frame
+   */
+  void displayFrame(const cv::Mat& frame);
 
 };//class USBCamReader
 }//namespace bbb_roadtest

@@ -9,18 +9,8 @@ include_directories(./include)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   cv_bridge
-#  actionlib
-#  actionlib_msgs
-#  gazebo_ros
-#  geometry_msgs
-#  laser_geometry
-#  pcl_conversions
-#  pcl_ros
-#  roscpp
   sensor_msgs
   std_msgs
-#  tf
-#  tf_conversions
   image_transport
   camera_info_manager
 )
