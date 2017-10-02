@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <opencv_storage>
   <topic> /bbb_roadtest/cam_publisher </topic>
-  <cam_idx> 1 </cam_idx>
+  <cam_idx> 0 </cam_idx>
   <debug> false </debug>
 </opencv_storage>

@@ -27,17 +27,18 @@ void getValuesFromFile(const string& prop_path, string& topic, int& cam_idx, boo
 }//getValuesFromFile
 
 
-
 int main(int argc, char **argv){
   ros::init(argc, argv, "cam_publisher");
   ros::NodeHandle nh;
 
+  string prop_path;
   if(argc != 2){
-    ROS_ERROR("Input file path measing!");
-    return 1;
-  }//if
+    ROS_WARN("Input file path measing! Default path is used!");
+    prop_path = "./src/BBBRoadtest/resources/cam_publisher.xml";
+  }else{
+    prop_path = argv[1];
+  }//if-else
 
-  string prop_path = argv[1];
   string topic;
   int cam_idx;
   bool show;
