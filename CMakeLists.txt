@@ -33,12 +33,22 @@ include_directories(include
   ${catkin_INCLUDE_DIRS}
 )
 
+
+
 add_library(cam_reader
   ./src/usb_cam_reader.cpp
 )
 
+add_library(cam_subscriber
+  ./src/cam_subscriber.cpp
+)
+
 add_executable(cam_publisher
   ./src/cam_publisher.cpp
+)
+
+add_executable(bbb_runner
+  ./src/bbb.cpp
 )
 
 
@@ -49,6 +59,15 @@ target_link_libraries(cam_reader
 
 target_link_libraries(cam_publisher
   cam_reader
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(cam_subscriber
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(bbb_runner
+  cam_subscriber
   ${catkin_LIBRARIES}
 )
 
