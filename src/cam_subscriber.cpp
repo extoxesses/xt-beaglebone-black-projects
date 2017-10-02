@@ -33,7 +33,6 @@ void CamSubscriber::getProperties(){
   cv_file_storage["debug"] >> debug_mode_;
 
   cv_file_storage["alpha"] >> alpha_;
-  std::cout << alpha_ << std::endl;
   cv_file_storage["beta"] >> beta_;
 
   cv_file_storage.release();
