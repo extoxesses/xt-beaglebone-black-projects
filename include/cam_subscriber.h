@@ -47,7 +47,7 @@ namespace bbb_roadtest{
 class CamSubscriber{
 
 public:
-  CamSubscriber(ros::NodeHandle& nh, std::string& sub_topic, std::string& pub_topic, bool debug = false);
+  CamSubscriber(ros::NodeHandle& nh, std::string& properties_path);
   /**
    * Default descrtuctor
    */
@@ -58,12 +58,19 @@ public:
 
 private:
   ros::NodeHandle nh_;
+  std::string properties_path_;
+
   std::string sub_topic_, pub_topic_;
   bool debug_mode_;
+  double alpha_;
+  int beta_;
 
   image_transport::Subscriber frame_sub_;
   image_transport::Publisher frame_pub_;
   cv::Mat last_frame_;
+
+  void getProperties();
+
 
   void frameCallback(const sensor_msgs::ImageConstPtr& frame);
 

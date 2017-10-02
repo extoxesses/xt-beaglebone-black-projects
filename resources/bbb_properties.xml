@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<opencv_storage>
+  <!-- This value have to be the same the cam_publisher.xml -->
+  <sub_topic> /bbb_roadtest/cam_publisher </sub_topic>
+  <pub_topic> /bbb_roadtest/cam_processing </pub_topic>
+
+  <debug> 0 </debug>
+
+  <!-- These coefficents are needed to set image preprocessing -->
+  <alpha> 1  </alpha>
+  <beta> 0 </beta>
+</opencv_storage>
+

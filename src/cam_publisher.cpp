@@ -33,7 +33,7 @@ int main(int argc, char **argv){
 
   string prop_path;
   if(argc != 2){
-    ROS_WARN("Input file path measing! Default path is used!");
+    ROS_WARN("Input file path missing! Default path is used!");
     prop_path = "./src/BBBRoadtest/resources/cam_publisher.xml";
   }else{
     prop_path = argv[1];
