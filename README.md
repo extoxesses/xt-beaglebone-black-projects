@@ -11,4 +11,4 @@ Please, pay attention that:
 
 ## Projects
 * [Element14 - Roadtest](./element14-roadtest)
-* [Home Router](./home-router)
+* [WiFi Hotspot](./wifi-hotspot)

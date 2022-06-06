@@ -1,12 +1,10 @@
-# Network Repeater
+# WiFi Hotspot
 ## TL;DR
 In this project I tried to configure the BeagleBone Black (*BBB*) and the network cape to emulate a network gateway. The requirement was to create a tether repeater, to convert a 4G USB stick connection to a WiFi connection.
 
 ## Tecnical requirements
 * OS: [AM3358 Debian 10.3 2020-04-06 4GB SD IoT](https://debian.beagleboard.org/images/bone-debian-10.3-iot-armhf-2020-04-06-4gb.img.xz)
   For the complete list of the leastest available distribution, please refer to the official [bb website](https://beagleboard.org/latest-images)
-
-* Network configurations: [/etc/network/interfaces](./interfaces)
 
 ## Configuration steps
 1. Donwnload the [AM3358 Debian 10.3 2020-04-06 4GB SD IoT](https://debian.beagleboard.org/images/bone-debian-10.3-iot-armhf-2020-04-06-4gb.img.xz) debian-based os, and flash it on a at least 4GB SD card.
